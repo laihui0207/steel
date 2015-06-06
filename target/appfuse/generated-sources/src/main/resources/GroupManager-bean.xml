@@ -1,7 +1,0 @@
-<!--GroupManager-START-->
-    <bean id="groupManager" class="com.huivip.steel.service.impl.GroupManagerImpl">
-        <constructor-arg ref="groupDao"/>
-    </bean>
-    <!--GroupManager-END-->
-
-    <!-- Add new Managers here -->

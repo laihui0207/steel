@@ -1,5 +1,0 @@
-<!--NewsTypeDao-START-->
-    <bean id="newsTypeDao" class="com.huivip.steel.dao.hibernate.NewsTypeDaoHibernate"/>
-    <!--NewsTypeDao-END-->
-
-    <!-- Add new DAOs here -->

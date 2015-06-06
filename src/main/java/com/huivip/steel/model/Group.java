@@ -1,5 +1,6 @@
 package com.huivip.steel.model;
 
+import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -21,13 +23,14 @@ public class Group extends BaseObject implements Serializable {
     private Long id;
     private String name;
     private String comment;
-    private Set memebers;
+    private Set<User> members =new HashSet<User>();
     private Timestamp createTime;
     private Timestamp updateTime;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Field(name="groupid")
+    @DocumentId
     public Long getId() {
         return id;
     }
@@ -51,14 +54,18 @@ public class Group extends BaseObject implements Serializable {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
-    @OneToMany
-    public Set getMemebers() {
-        return memebers;
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
+    @JoinTable(
+            name = "groupmember",
+            joinColumns = {@JoinColumn(name = "group_id")},
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    public Set<User> getMembers() {
+        return members;
     }
 
-    public void setMemebers(Set memebers) {
-        this.memebers = memebers;
+    public void setMembers(Set<User> members) {
+        this.members = members;
     }
 
     public Timestamp getCreateTime() {

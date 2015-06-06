@@ -15,9 +15,26 @@
     <!--NewsType-START-->
     <menu:displayMenu name="NewsTypeMenu"/>
     <!--NewsType-END-->
+    
+    
+    
+    
     <!--Group-START-->
     <menu:displayMenu name="GroupMenu"/>
     <!--Group-END-->
+    
+    <!--News-START-->
+    <menu:displayMenu name="NewsMenu"/>
+    <!--News-END-->
+    <!--Post-START-->
+    <menu:displayMenu name="PostMenu"/>
+    <!--Post-END-->
+    <!--PostType-START-->
+    <menu:displayMenu name="PostTypeMenu"/>
+    <!--PostType-END-->
+    <!--Reply-START-->
+    <menu:displayMenu name="ReplyMenu"/>
+    <!--Reply-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

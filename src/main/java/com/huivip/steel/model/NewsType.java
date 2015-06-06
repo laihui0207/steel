@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sunlaihui on 6/6/15.
@@ -23,6 +25,9 @@ public class NewsType extends BaseObject implements Serializable {
     private String comment;
     private Timestamp createTime;
     private Timestamp updateTime;
+    private User creater;
+    private User updater;
+    private List<News> news=new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +55,15 @@ public class NewsType extends BaseObject implements Serializable {
     public void setComment(String comment) {
         this.comment = comment;
     }
+    @ManyToOne
+    @JoinColumn(name="creater_id")
+    public User getCreater() {
+        return creater;
+    }
+
+    public void setCreater(User creater) {
+        this.creater = creater;
+    }
 
     public Timestamp getCreateTime() {
         return createTime;
@@ -58,6 +72,15 @@ public class NewsType extends BaseObject implements Serializable {
     public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
+    @ManyToOne
+    @JoinColumn(name = "updater_id")
+    public User getUpdater() {
+        return updater;
+    }
+
+    public void setUpdater(User updater) {
+        this.updater = updater;
+    }
 
     public Timestamp getUpdateTime() {
         return updateTime;
@@ -65,6 +88,14 @@ public class NewsType extends BaseObject implements Serializable {
 
     public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
+    }
+    @OneToMany(mappedBy = "newsType")
+    public List<News> getNews() {
+        return news;
+    }
+
+    public void setNews(List<News> news) {
+        this.news = news;
     }
 
     @Override

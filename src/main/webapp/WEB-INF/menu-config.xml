@@ -17,10 +17,36 @@
         <!--NewsType-START-->
         <Menu name="NewsTypeMenu" title="newsTypeList.title" page="/newsTypes"/>
         <!--NewsType-END-->
+        
+        
+        
+        
         <!--Group-START-->
         <Menu name="GroupMenu" title="groupList.title" page="/groups"/>
         <!--Group-END-->
+        
+        <!--News-START-->
+        <Menu name="NewsMenu" title="newsList.title" page="/newss"/>
+        <!--News-END-->
+        <!--Post-START-->
+        <Menu name="PostMenu" title="postList.title" page="/posts"/>
+        <!--Post-END-->
+        <!--PostType-START-->
+        <Menu name="PostTypeMenu" title="postTypeList.title" page="/postTypes"/>
+        <!--PostType-END-->
+        <!--Reply-START-->
+        <Menu name="ReplyMenu" title="replyList.title" page="/replies"/>
+        <!--Reply-END-->
     </Menus>
+
+
+
+
+
+
+
+
+
 
 
 </MenuConfig>

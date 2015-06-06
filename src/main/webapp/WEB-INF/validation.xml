@@ -54,9 +54,36 @@
         <form name="newsType">
         </form>
         <!--NewsType-END-->
+        
+        
+        
+        
         <!--Group-START-->
         <form name="group">
         </form>
         <!--Group-END-->
+        
+        <!--News-START-->
+        <form name="news">
+            <field property="ifAccessLimited" depends="required">
+                <arg key="news.ifAccessLimited"/>
+            </field>
+        </form>
+        <!--News-END-->
+        <!--Post-START-->
+        <form name="post">
+            <field property="ifAccessAllReply" depends="required">
+                <arg key="post.ifAccessAllReply"/>
+            </field>
+        </form>
+        <!--Post-END-->
+        <!--PostType-START-->
+        <form name="postType">
+        </form>
+        <!--PostType-END-->
+        <!--Reply-START-->
+        <form name="reply">
+        </form>
+        <!--Reply-END-->
     </formset>
 </form-validation>
