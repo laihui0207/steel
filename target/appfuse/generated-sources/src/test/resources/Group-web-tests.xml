@@ -1,0 +1,93 @@
+    <!--Group-START-->
+    <!-- runs group-related tests -->
+    <target name="GroupTests"
+            depends="SearchGroups,EditGroup,SaveGroup,AddGroup,DeleteGroup"
+            description="Call and executes all group test cases (targets)">
+        <echo>Successfully ran all Group UI tests!</echo>
+    </target>
+
+    <!-- Verify the groups list screen displays without errors -->
+    <target name="SearchGroups" description="Tests search for and displaying all groups">
+        <webtest name="searchGroups">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View Group link" url="/groups"/>
+                <verifytitle description="we should see the groupList title"
+                    text=".*${groupList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the groupList title"
+                    text=".*${groupList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit group screen displays without errors -->
+    <target name="EditGroup" description="Tests editing an existing Group's information">
+        <webtest name="editGroup">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View Group List" url="/groups"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the groupDetail title"
+                    text=".*${groupDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a group and then save -->
+    <target name="SaveGroup" description="Tests editing and saving a group">
+        <webtest name="saveGroup">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Group link" url="/groupform?id=-1"/>
+                <verifytitle description="we should see the groupDetail title"
+                    text=".*${groupDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${groupDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${group.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new Group -->
+    <target name="AddGroup" description="Adds a new Group">
+        <webtest name="addGroup">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/groupform"/>
+                <verifytitle description="we should see the groupDetail title"
+                    text=".*${groupDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="Group List appears if save successful"
+                    text=".*${groupList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${group.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing group -->
+    <target name="DeleteGroup" description="Deletes existing Group">
+        <webtest name="deleteGroup">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Group link" url="/groupform?id=-1"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifytitle description="display Group List" text=".*${groupList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${group.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--Group-END-->
+</project>

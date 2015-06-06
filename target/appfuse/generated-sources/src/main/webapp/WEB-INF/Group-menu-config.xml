@@ -1,0 +1,4 @@
+        <!--Group-START-->
+        <Menu name="GroupMenu" title="groupList.title" page="/groups"/>
+        <!--Group-END-->
+    </Menus>

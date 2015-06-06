@@ -1,0 +1,105 @@
+package com.huivip.steel.model;
+
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+/**
+ * Created by sunlaihui on 6/6/15.
+ */
+@Entity
+@Table(name="newstype")
+@Indexed
+@XmlRootElement
+public class NewsType extends BaseObject implements Serializable {
+
+
+    private Long id;
+    private String name;
+    private String comment;
+    private Timestamp createTime;
+    private Timestamp updateTime;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Field(name = "newstypeid")
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+    }
+
+    public Timestamp getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Timestamp updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        NewsType newsType = (NewsType) o;
+
+        if (id != null ? !id.equals(newsType.id) : newsType.id != null) return false;
+        if (name != null ? !name.equals(newsType.name) : newsType.name != null) return false;
+        if (comment != null ? !comment.equals(newsType.comment) : newsType.comment != null) return false;
+        if (createTime != null ? !createTime.equals(newsType.createTime) : newsType.createTime != null) return false;
+        return !(updateTime != null ? !updateTime.equals(newsType.updateTime) : newsType.updateTime != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (comment != null ? comment.hashCode() : 0);
+        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
+        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "NewsType{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", comment='" + comment + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
+}

@@ -1,0 +1,5 @@
+<!--GroupDao-START-->
+    <bean id="groupDao" class="com.huivip.steel.dao.hibernate.GroupDaoHibernate"/>
+    <!--GroupDao-END-->
+
+    <!-- Add new DAOs here -->
