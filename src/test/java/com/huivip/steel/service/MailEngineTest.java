@@ -113,7 +113,7 @@ public class MailEngineTest extends BaseManagerTestCase {
                 hasTheAttachment = true;
                 assertEquals(ATTACHMENT_NAME, bp.getFileName());
             } else {
-                fail("Did not expect to be able to get here.");
+                fail("Did not expect to be able to getUserGroup here.");
             }
         }
         assertTrue(hasTheAttachment);

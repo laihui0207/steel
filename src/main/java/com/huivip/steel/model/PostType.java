@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,8 +23,8 @@ public class PostType extends BaseObject implements Serializable {
     private Long id;
     private String name;
     private String comment;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Timestamp createTime=new Timestamp(new Date().getTime());
+    private Timestamp updateTime=new Timestamp(new Date().getTime());
     private User creater;
     private User updater;
     private List<Post> posts=new ArrayList<>();
@@ -63,7 +64,7 @@ public class PostType extends BaseObject implements Serializable {
     public void setCreater(User creater) {
         this.creater = creater;
     }
-
+    @Column(updatable = false)
     public Timestamp getCreateTime() {
         return createTime;
     }

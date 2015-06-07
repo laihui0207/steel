@@ -90,4 +90,185 @@
             <value description="role_id">1</value>
         </row>
     </table>
+    <table name="usergroup">
+        <column>id</column>
+        <column>comment</column>
+        <column>name</column>
+        <row>
+            <value description="id">1</value>
+            <value description="comment">1 group comment</value>
+            <value description="name">AGroup</value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="comment"> 2 group comment</value>
+            <value description="name">Bgroup</value>
+        </row>
+        <row>
+            <value description="id">3</value>
+            <value description="comment">3 group comment</value>
+            <value description="name">Cgroup</value>
+        </row>
+    </table>
+    <table name="groupmember">
+        <column>group_id</column>
+        <column>user_id</column>
+        <row>
+            <value description="group_id">1</value>
+            <value description="user_id">1</value>
+        </row>
+        <row>
+            <value description="group_id">1</value>
+            <value description="user_id">2</value>
+        </row>
+        <row>
+            <value description="group_id">2</value>
+            <value description="user_id">2</value>
+        </row>
+    </table>
+    <table name="newstype">
+        <column>id</column>
+        <column>comment</column>
+        <column>name</column>
+        <column>creater_id</column>
+        <column>updater_id</column>
+        <row>
+            <value description="id">1</value>
+            <value description="comment">aaa</value>
+            <value description="name">TypeA</value>
+            <value description="creater_id">1</value>
+            <value description="updater_id">1</value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="comment">BBB</value>
+            <value description="name">TypeB</value>
+            <value description="creater_id">2</value>
+            <value description="updater_id">2</value>
+        </row>
+        <row>
+            <value description="id">3</value>
+            <value description="comment">CCC</value>
+            <value description="name">TypeC</value>
+            <value description="creater_id">1</value>
+            <value description="updater_id">2</value>
+        </row>
+    </table>
+    <table name="news">
+        <column>id</column>
+        <column>content</column>
+        <column>ifAccessLimited</column>
+        <column>thumbnailUrl</column>
+        <column>title</column>
+        <column>creater_id</column>
+        <column>newsType_id</column>
+        <row>
+            <value description="id">1</value>
+            <value description="content">aaa</value>
+            <value description="ifAccessLimited">1</value>
+            <value description="thumbnailUrl">aaaa</value>
+            <value description="creater_id">1</value>
+            <value description="newsType_id">1</value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="content">cccc</value>
+            <value description="ifAccessLimited">0</value>
+            <value description="thumbnailUrl">adfadsf</value>
+            <value description="creater_id">2</value>
+            <value description="newsType_id">2</value>
+        </row>
+        <row>
+            <value description="id">3</value>
+            <value description="content">asdfasdfj</value>
+            <value description="ifAccessLimited">1</value>
+            <value description="thumbnailUrl">sdfasd</value>
+            <value description="creater_id">1</value>
+            <value description="newsType_id">2</value>
+        </row>
+    </table>
+    <table name="newsViewGroups">
+        <column>news_id</column>
+        <column>group_id</column>
+        <row>
+            <value description="news_id">1</value>
+            <value description="group_id">1</value>
+        </row>
+        <row>
+            <value description="news_id">1</value>
+            <value description="group_id">2</value>
+        </row>
+        <row>
+            <value description="news_id">2</value>
+            <value description="group_id">2</value>
+        </row>
+    </table>
+    <table name="newsViewUsers">
+        <column>news_id</column>
+        <column>user_id</column>
+        <row>
+            <value description="news_id">1</value>
+            <value description="user_id">1</value>
+        </row>
+        <row>
+            <value description="news_id">2</value>
+            <value description="user_id">2</value>
+        </row>
+        <row>
+            <value description="news_id">3</value>
+            <value description="user_id">2</value>
+        </row>
+    </table>
+    <table name="posttype">
+        <column>id</column>
+        <column>comment</column>
+        <column>name</column>
+        <column>creater_id</column>
+        <column>updater_id</column>
+        <row>
+            <value description="id">1</value>
+            <value description="comment">sdfads</value>
+            <value description="name">PostTypeA</value>
+            <value description="creater_id">1</value>
+            <value description="updater_id">1</value>
+        </row>
+        <row>
+            <value description="id">2</value>
+            <value description="comment">sdfasd</value>
+            <value description="name">PostTypeB</value>
+            <value description="creater_id">2</value>
+            <value description="updater_id">2</value>
+        </row>
+        <row>
+            <value description="id">3</value>
+            <value description="comment">asdfa</value>
+            <value description="name">PostType3</value>
+            <value description="creater_id">1</value>
+            <value description="updater_id">1</value>
+        </row>
+    </table>
+    <table name="post">
+        <column>id</column>
+        <column>content</column>
+        <column>ifAccessAllReply</column>
+        <column>thumbnailUrl</column>
+        <column>title</column>
+        <column>creater_id</column>
+        <column>posttype_id</column>
+    </table>
+    <table name="postReplyGroups">
+        <column>post_id</column>
+        <column>group_id</column>
+    </table>
+    <table name="postReplyUsers">
+        <column>post_id</column>
+        <column>user_id</column>
+    </table>
+    <table name="replies">
+        <column>id</column>
+        <column>content</column>
+        <column>replyTime</column>
+        <column>post_id</column>
+        <column>replier_id</column>
+    </table>
 </dataset>

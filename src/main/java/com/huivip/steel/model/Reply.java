@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Created by sunlaihui on 6/6/15.
@@ -21,7 +22,8 @@ public class Reply extends BaseObject implements Serializable {
     private String content;
     private Post post;
     private User replier;
-    private Timestamp replyTime;
+    private Timestamp replyTime=new Timestamp(new Date().getTime());
+    private Timestamp updateTime=new Timestamp(new Date().getTime());
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,13 +61,21 @@ public class Reply extends BaseObject implements Serializable {
     public void setReplier(User replier) {
         this.replier = replier;
     }
-
+    @Column(updatable = false)
     public Timestamp getReplyTime() {
         return replyTime;
     }
 
     public void setReplyTime(Timestamp replyTime) {
         this.replyTime = replyTime;
+    }
+
+    public Timestamp getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Timestamp updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override

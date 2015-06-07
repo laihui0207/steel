@@ -75,7 +75,7 @@ public class UserSecurityAdvice implements MethodBeforeAdvice, AfterReturningAdv
                     log.warn("Access Denied: '" + currentUser.getUsername() + "' tried to modify '" + user.getUsername() + "'!");
                     throw new AccessDeniedException(ACCESS_DENIED);
                 } else if (user.getId() != null && user.getId().equals(currentUser.getId()) && !administrator) {
-                    // get the list of roles the user is trying add
+                    // getUserGroup the list of roles the user is trying add
                     Set<String> userRoles = new HashSet<String>();
                     if (user.getRoles() != null) {
                         for (Object o : user.getRoles()) {
@@ -84,7 +84,7 @@ public class UserSecurityAdvice implements MethodBeforeAdvice, AfterReturningAdv
                         }
                     }
 
-                    // get the list of roles the user currently has
+                    // getUserGroup the list of roles the user currently has
                     Set<String> authorizedRoles = new HashSet<String>();
                     for (GrantedAuthority role : roles) {
                         authorizedRoles.add(role.getAuthority());

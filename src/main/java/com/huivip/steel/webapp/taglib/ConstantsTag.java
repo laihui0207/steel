@@ -56,7 +56,7 @@ public class ConstantsTag extends TagSupport {
      */
     @Override
     public int doStartTag() throws JspException {
-        // Using reflection, get the available field names in the class
+        // Using reflection, getUserGroup the available field names in the class
         Class c = null;
         int toScope = PageContext.PAGE_SCOPE;
 

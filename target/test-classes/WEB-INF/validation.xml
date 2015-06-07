@@ -50,19 +50,26 @@
                 <arg key="user.password"/>
             </field>
         </form>
-        <!--NewsType-START-->
-        <form name="newsType">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--UserGroup-START-->
+        <form name="userGroup">
         </form>
-        <!--NewsType-END-->
-        
-        
-        
-        
-        <!--Group-START-->
-        <form name="group">
-        </form>
-        <!--Group-END-->
-        
+        <!--UserGroup-END-->
         <!--News-START-->
         <form name="news">
             <field property="ifAccessLimited" depends="required">
@@ -70,20 +77,9 @@
             </field>
         </form>
         <!--News-END-->
-        <!--Post-START-->
-        <form name="post">
-            <field property="ifAccessAllReply" depends="required">
-                <arg key="post.ifAccessAllReply"/>
-            </field>
+        <!--NewsType-START-->
+        <form name="newsType">
         </form>
-        <!--Post-END-->
-        <!--PostType-START-->
-        <form name="postType">
-        </form>
-        <!--PostType-END-->
-        <!--Reply-START-->
-        <form name="reply">
-        </form>
-        <!--Reply-END-->
+        <!--NewsType-END-->
     </formset>
 </form-validation>

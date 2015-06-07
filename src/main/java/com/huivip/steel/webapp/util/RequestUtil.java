@@ -42,7 +42,7 @@ public final class RequestUtil {
     }
 
     /**
-     * Convenience method to get a cookie by name
+     * Convenience method to getUserGroup a cookie by name
      *
      * @param request the current request
      * @param name the name of the cookie to find
@@ -85,7 +85,7 @@ public final class RequestUtil {
     }
 
     /**
-     * Convenience method to get the application's URL based on request
+     * Convenience method to getUserGroup the application's URL based on request
      * variables.
      * 
      * @param request the current request

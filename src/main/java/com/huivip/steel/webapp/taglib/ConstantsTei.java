@@ -40,7 +40,7 @@ public class ConstantsTei extends TagExtraInfo {
 
             Class c = Class.forName(clazz);
 
-            // if no var specified, get all
+            // if no var specified, getUserGroup all
             if (data.getAttributeString("var") == null) {
                 Field[] fields = c.getDeclaredFields();
 

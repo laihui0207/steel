@@ -1,13 +1,14 @@
 package com.huivip.steel.model;
 
-import org.hibernate.search.annotations.Field;
-import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,12 +20,11 @@ import java.util.List;
 @XmlRootElement
 public class NewsType extends BaseObject implements Serializable {
 
-
     private Long id;
     private String name;
     private String comment;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Timestamp createTime=new Timestamp(new Date().getTime());
+    private Timestamp updateTime=new Timestamp(new Date().getTime());
     private User creater;
     private User updater;
     private List<News> news=new ArrayList<>();
@@ -39,7 +39,7 @@ public class NewsType extends BaseObject implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getName() {
         return name;
     }
@@ -47,7 +47,7 @@ public class NewsType extends BaseObject implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getComment() {
         return comment;
     }
@@ -64,7 +64,7 @@ public class NewsType extends BaseObject implements Serializable {
     public void setCreater(User creater) {
         this.creater = creater;
     }
-
+    @Column(updatable=false)
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -81,7 +81,6 @@ public class NewsType extends BaseObject implements Serializable {
     public void setUpdater(User updater) {
         this.updater = updater;
     }
-
     public Timestamp getUpdateTime() {
         return updateTime;
     }
@@ -89,7 +88,9 @@ public class NewsType extends BaseObject implements Serializable {
     public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
+    @IndexedEmbedded
     @OneToMany(mappedBy = "newsType")
+    @Transient
     public List<News> getNews() {
         return news;
     }
@@ -97,7 +98,14 @@ public class NewsType extends BaseObject implements Serializable {
     public void setNews(List<News> news) {
         this.news = news;
     }
-
+    @PrePersist
+    protected void onCreate() {
+        createTime=new Timestamp(new Date().getTime());
+    }
+    @PreUpdate
+    protected  void onUpdate(){
+        updateTime=new Timestamp(new Date().getTime());
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

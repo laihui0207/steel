@@ -66,7 +66,7 @@ public class LabelTag extends TagSupport {
             locale = Locale.getDefault();
         }
 
-        // get the name of the bean from the key
+        // getUserGroup the name of the bean from the key
         String formName = key.substring(0, key.indexOf('.'));
         String fieldName = key.substring(formName.length() + 1);
 
@@ -149,7 +149,7 @@ public class LabelTag extends TagSupport {
     /*private String getErrorMessages(List fes) throws NoSuchMessageException {
         StringBuffer message = new StringBuffer();
         for (int i = 0; i < fes.size(); i++) {
-            ObjectError error = (ObjectError) fes.get(i);
+            ObjectError error = (ObjectError) fes.getUserGroup(i);
             message.append(this.requestContext.getMessage(error, true));
         }
         return message.toString();

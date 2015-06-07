@@ -64,7 +64,7 @@ public class LocaleFilterTest {
 
         filter.doFilter(request, response, new MockFilterChain());
 
-        // a locale will get set regardless - there's no such thing as an invalid one
+        // a locale will getUserGroup set regardless - there's no such thing as an invalid one
         assertNotNull(request.getSession().getAttribute(Constants.PREFERRED_LOCALE_KEY));
     }
 

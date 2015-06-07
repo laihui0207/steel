@@ -7,10 +7,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by sunlaihui on 6/6/15.
@@ -23,8 +20,8 @@ public class Post extends BaseObject implements Serializable {
     private Long id;
     private String title;
     private String content;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Timestamp createTime=new Timestamp(new Date().getTime());
+    private Timestamp updateTime=new Timestamp(new Date().getTime());
     private Timestamp lastReplyTime;
     private User lastReplyUser;
     private User creater;
@@ -33,7 +30,7 @@ public class Post extends BaseObject implements Serializable {
 
     // if true, all user can reply the post, if false, just allow reply groups and reply user can reply the post
     private boolean ifAccessAllReply;
-    private Set<Group> replyGroups=new HashSet<>();
+    private Set<UserGroup> replyGroups=new HashSet<>();
     private Set<User>  replyUsers=new HashSet<>();
     private List<Reply> replies=new ArrayList<>();
 
@@ -64,6 +61,7 @@ public class Post extends BaseObject implements Serializable {
         this.content = content;
     }
 
+    @Column(updatable = false )
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -104,20 +102,20 @@ public class Post extends BaseObject implements Serializable {
     public void setIfAccessAllReply(boolean ifAccessAllReply) {
         this.ifAccessAllReply = ifAccessAllReply;
     }
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
     @JoinTable(
             name = "postReplyGroups",
             joinColumns = {@JoinColumn(name = "post_id")},
             inverseJoinColumns = @JoinColumn(name = "group_id")
     )
-    public Set<Group> getReplyGroups() {
+    public Set<UserGroup> getReplyGroups() {
         return replyGroups;
     }
 
-    public void setReplyGroups(Set<Group> replyGroups) {
+    public void setReplyGroups(Set<UserGroup> replyGroups) {
         this.replyGroups = replyGroups;
     }
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
     @JoinTable(
             name = "postReplyUsers",
             joinColumns = {@JoinColumn(name = "post_id")},

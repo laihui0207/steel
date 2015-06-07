@@ -1,12 +1,13 @@
 package com.huivip.steel.model;
 
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,14 +22,14 @@ public class News extends BaseObject implements Serializable {
     private Long id;
     private String title;
     private String content;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Timestamp createTime= new Timestamp(new Date().getTime());
+    private Timestamp updateTime = new Timestamp(new Date().getTime());
     private Timestamp expiredTime;
     private NewsType newsType;
     private User creater;
     private boolean ifAccessLimited;
 
-    private Set<Group> viewGroups=new HashSet<>();
+    private Set<UserGroup> viewGroups=new HashSet<>();
     private Set<User>  viewUsers=new HashSet<>();
 
     private String thumbnailUrl;
@@ -43,7 +44,7 @@ public class News extends BaseObject implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getTitle() {
         return title;
     }
@@ -51,7 +52,7 @@ public class News extends BaseObject implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getContent() {
         return content;
     }
@@ -60,6 +61,7 @@ public class News extends BaseObject implements Serializable {
         this.content = content;
     }
 
+    @Column(updatable = false)
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -83,7 +85,7 @@ public class News extends BaseObject implements Serializable {
     public void setExpiredTime(Timestamp expiredTime) {
         this.expiredTime = expiredTime;
     }
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "creater_id")
     public User getCreater() {
         return creater;
@@ -92,7 +94,7 @@ public class News extends BaseObject implements Serializable {
     public void setCreater(User creater) {
         this.creater = creater;
     }
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="newsType_id")
     public NewsType getNewsType() {
         return newsType;
@@ -109,20 +111,20 @@ public class News extends BaseObject implements Serializable {
     public void setIfAccessLimited(boolean ifAccessLimited) {
         this.ifAccessLimited = ifAccessLimited;
     }
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "newsViewGroups",
             joinColumns = {@JoinColumn(name = "news_id")},
             inverseJoinColumns = @JoinColumn(name = "group_id")
     )
-    public Set<Group> getViewGroups() {
+    public Set<UserGroup> getViewGroups() {
         return viewGroups;
     }
 
-    public void setViewGroups(Set<Group> viewGroups) {
+    public void setViewGroups(Set<UserGroup> viewGroups) {
         this.viewGroups = viewGroups;
     }
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
     @JoinTable(
             name = "newsViewUsers",
             joinColumns = {@JoinColumn(name = "news_id")},

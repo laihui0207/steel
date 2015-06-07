@@ -21,6 +21,15 @@
 <form:form commandName="news" method="post" action="newsform" cssClass="well"
            id="newsForm" onsubmit="return validateNews(this)">
 <form:hidden path="id"/>
+    <!-- todo: change this to read the identifier field from the other pojo -->
+    <form:select cssClass="form-control" path="newsType" items="${newsTypeList}" itemLabel="name" itemValue="id"/>
+    <spring:bind path="news.title">
+        <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
+    </spring:bind>
+    <appfuse:label key="news.title" styleClass="control-label"/>
+    <form:input cssClass="form-control" path="title" id="title"  maxlength="255"/>
+    <form:errors path="title" cssClass="help-block"/>
+    </div>
     <spring:bind path="news.content">
     <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
     </spring:bind>
@@ -28,15 +37,13 @@
         <form:input cssClass="form-control" path="content" id="content"  maxlength="255"/>
         <form:errors path="content" cssClass="help-block"/>
     </div>
-    <spring:bind path="news.createTime">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
+    <spring:bind path="news.thumbnailUrl">
+        <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
     </spring:bind>
-        <appfuse:label key="news.createTime" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="createTime" id="createTime"  maxlength="255"/>
-        <form:errors path="createTime" cssClass="help-block"/>
+    <appfuse:label key="news.thumbnailUrl" styleClass="control-label"/>
+    <form:input cssClass="form-control" path="thumbnailUrl" id="thumbnailUrl"  maxlength="255"/>
+    <form:errors path="thumbnailUrl" cssClass="help-block"/>
     </div>
-    <!-- todo: change this to read the identifier field from the other pojo -->
-    <form:select cssClass="form-control" path="creater" items="createrList" itemLabel="label" itemValue="value"/>
     <spring:bind path="news.expiredTime">
     <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
     </spring:bind>
@@ -50,27 +57,6 @@
         <appfuse:label key="news.ifAccessLimited" styleClass="control-label"/>
         <form:checkbox path="ifAccessLimited" id="ifAccessLimited" cssClass="checkbox"/>
         <form:errors path="ifAccessLimited" cssClass="help-block"/>
-    </div>
-    <spring:bind path="news.thumbnailUrl">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="news.thumbnailUrl" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="thumbnailUrl" id="thumbnailUrl"  maxlength="255"/>
-        <form:errors path="thumbnailUrl" cssClass="help-block"/>
-    </div>
-    <spring:bind path="news.title">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="news.title" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="title" id="title"  maxlength="255"/>
-        <form:errors path="title" cssClass="help-block"/>
-    </div>
-    <spring:bind path="news.updateTime">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="news.updateTime" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="updateTime" id="updateTime"  maxlength="255"/>
-        <form:errors path="updateTime" cssClass="help-block"/>
     </div>
 
     <div class="form-group">

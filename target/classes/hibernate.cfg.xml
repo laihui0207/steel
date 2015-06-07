@@ -8,13 +8,11 @@
     <session-factory>
         <mapping class="com.huivip.steel.model.User"/>
         <mapping class="com.huivip.steel.model.Role"/>
+    
+    
+    
+        <mapping class="com.huivip.steel.model.UserGroup"/>
         <mapping class="com.huivip.steel.model.NewsType"/>
-    
-    
-        <mapping class="com.huivip.steel.model.Group"/>
         <mapping class="com.huivip.steel.model.News"/>
-        <mapping class="com.huivip.steel.model.PostType"/>
-        <mapping class="com.huivip.steel.model.Post"/>
-        <mapping class="com.huivip.steel.model.Reply"/>
     </session-factory>
 </hibernate-configuration>

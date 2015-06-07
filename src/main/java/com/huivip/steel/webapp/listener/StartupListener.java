@@ -125,7 +125,7 @@ public class StartupListener implements ServletContextListener {
         ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
         LookupManager mgr = (LookupManager) ctx.getBean("lookupManager");
 
-        // get list of possible roles
+        // getUserGroup list of possible roles
         context.setAttribute(Constants.AVAILABLE_ROLES, mgr.getAllRoles());
         log.debug("Drop-down initialization complete [OK]");
 

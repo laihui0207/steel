@@ -17,6 +17,7 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.query.substitutions">true 'Y', false 'N'</prop>
                 <prop key="hibernate.cache.use_second_level_cache">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
                 <!-- Hibernate Search index directory -->
                 <prop key="hibernate.search.default.indexBase">${app.search.index.basedir}</prop>
@@ -33,7 +34,6 @@
 
     <!-- Activates scanning of @Autowired -->
     <context:annotation-config/>
-
     <!-- Activates scanning of @Repository -->
     <context:component-scan base-package="com.huivip.steel.dao"/>
 

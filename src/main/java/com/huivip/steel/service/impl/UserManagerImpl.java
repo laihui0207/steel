@@ -94,7 +94,8 @@ public class UserManagerImpl extends GenericManagerImpl<User, Long> implements U
      */
     @Override
     public User getUser(final String userId) {
-        return userDao.get(new Long(userId));
+        User user=userDao.get(new Long(userId));
+        return user;
     }
 
     /**

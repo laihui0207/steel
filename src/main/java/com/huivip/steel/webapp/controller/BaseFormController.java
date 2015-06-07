@@ -131,7 +131,7 @@ public class BaseFormController implements ServletContextAware {
     }
 
     /**
-     * Convenience method to get the Configuration HashMap
+     * Convenience method to getUserGroup the Configuration HashMap
      * from the servlet context.
      *
      * @return the user's populated form from the session
@@ -184,7 +184,7 @@ public class BaseFormController implements ServletContextAware {
         Map<String, Serializable> model = new HashMap<String, Serializable>();
         model.put("user", user);
 
-        // TODO: once you figure out how to get the global resource bundle in
+        // TODO: once you figure out how to getUserGroup the global resource bundle in
         // WebWork, then figure it out here too.  In the meantime, the Username
         // and Password labels are hard-coded into the template. 
         // model.put("bundle", getTexts());

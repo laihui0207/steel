@@ -14,30 +14,30 @@
             <Item name="FileUpload" title="menu.selectFile" page="/fileupload"/>
         </Menu>
         <Menu name="Logout" title="user.logout" page="/logout" roles="ROLE_ADMIN,ROLE_USER"/>
-        <!--NewsType-START-->
-        <Menu name="NewsTypeMenu" title="newsTypeList.title" page="/newsTypes"/>
-        <!--NewsType-END-->
+
         
         
         
         
-        <!--Group-START-->
-        <Menu name="GroupMenu" title="groupList.title" page="/groups"/>
-        <!--Group-END-->
         
+        <!--UserGroup-START-->
+        <Menu name="UserGroupMenu" title="userGroupList.title" page="/userGroups"/>
+        <!--UserGroup-END-->
         <!--News-START-->
         <Menu name="NewsMenu" title="newsList.title" page="/newss"/>
         <!--News-END-->
-        <!--Post-START-->
-        <Menu name="PostMenu" title="postList.title" page="/posts"/>
-        <!--Post-END-->
-        <!--PostType-START-->
-        <Menu name="PostTypeMenu" title="postTypeList.title" page="/postTypes"/>
-        <!--PostType-END-->
-        <!--Reply-START-->
-        <Menu name="ReplyMenu" title="replyList.title" page="/replies"/>
-        <!--Reply-END-->
+        <!--NewsType-START-->
+        <Menu name="NewsTypeMenu" title="newsTypeList.title" page="/newsTypes"/>
+        <!--NewsType-END-->
     </Menus>
+
+
+
+
+
+
+
+
 
 
 
