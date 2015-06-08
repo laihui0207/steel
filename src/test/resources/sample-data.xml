@@ -217,7 +217,58 @@
     </row>
     </table>
     <!--NewsType-END-->
+    <!--News-START-->
+    <table name="news">
+        <column>id</column>
+        <column>content</column>
+        <column>createTime</column>
+        <column>creater_id</column>
+        <column>expiredTime</column>
+        <column>ifAccessLimited</column>
+        <column>newsType_id</column>
+        <column>thumbnailUrl</column>
+        <column>title</column>
+        <column>updateTime</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="content">XsDvAhYhZzJaRyNlSgVxDqWnKdTaEsHnYpExVbIzVcKdLtUyNyQeWdJaUbLbYdNaDiMgXlOfAfDrGdCtEsHyBvZbMzVoCzDjAmUdMjUiHbXhNcRsXjVqMoVoUyRzXnKdBlRsPyDoIyNvNcYkOnJoJmFyAxHyJjQfVzLwXyBlLjReXmYpWwWxEyFtElQfXbDtBdCrLrNrKaNqHrGfUmLdUkVuAuLhAdWaJiPtGgMaKuKoZhEjDbNpZsSaCgTbEqB</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-1</value>
+        <value description="expiredTime">2015-06-09</value>
+        <value description="ifAccessLimited">0</value>
+        <value description="newsType_id">-1</value>
+        <value description="thumbnailUrl">NsSjYsZuTlKbBhNcSlBsOxReBhNnOeKhQsSbMjVfBzXwApAzZbVnAeRgWjUsLnFqHqZrDyLtWmQkOdOgXpJqIbWfOeKgEeNhSaLqSrFbVtNjMvMbGnPfSpIeRoMwUlCbYmOlUuSlPeEpBiZmCaToCqNbKyHiWkJrEpEmShJuKcXlEiYdOeJaHkEtKzByQdHsIfCvXaDtUzKgPhUdNfXcKyFnPoAcNoNjHxJuGzXqQdBhKdRdTgGyIgZrKvTlPlQ</value>
+        <value description="title">UwWnGwTtVlGgVcLzTiFcVtFwObWqYuNtQiQjJeJnCvVaIhTyAzTrEbGzQhCrHyAgRhSoVcGvRjBdGgEtMfXsSzSfYfNpTdKbXjRxYmRbCoYcSlHnDgKqQcCjToQbDoGsRqHrEyCySdMoOfAxTiWfQnUvPwBeThQcEzFdXwBzXmIeWyHtTkRzKhZhGlEmDqKhIvLoOmElGqLfGjKbSxNpArUqIzArRiAlOeSdSpLlHbMaZbZdSvWtHpSkWuMgLlN</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="content">JeRgMtEtMbBuGxGaZqDbTiUfAhItTnFqWvDxBmJqWiIdOsYeGvHdImRsXmRcSnFmRcIfHkTjQwPjPsEnVvAmNmWrFjOrPcUaOvVaLpWhWwUtDmMhHnOkYvUbCnIuHaUeNyJeApXcVxFaJaZxIrXvEnJyLaPfJiKaMgBoLzTaVyDaTcClIhKpQsMmKrTdCyLiCzLiXlEkXnLpWvCfJpPvNcZaLmVvIcScRyClHyKjClWoMjLmKeHnXeOlSgSxYnS</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-2</value>
+        <value description="expiredTime">2015-06-09</value>
+        <value description="ifAccessLimited">0</value>
+        <value description="newsType_id">-2</value>
+        <value description="thumbnailUrl">RtObJvMtEsNdBcHxUwHwJkZlBmNnYfMpAkOjCjNqYdPkCpOiZbMaYsWqEwUhYuLfYhNlLoIzVmXhKaJzEkLjDtRfNvWwHnNsDpAlLpAnFzNpMyWgGkEtRvFbOpOxCyQeXiUeEyFpHdFuVsFkFhEkYbUmEySpOsPnKzDsVrQeVmQoRgBoKpJqKeFrLdExOkQqIjVbUkJbDlHiPuWzDaOqPnUsBuKwSoBwHnZdFkWlMlJoVgYvMwZoBdUoLgAkNaE</value>
+        <value description="title">TdGiZyYsQlKmXhNnSkIfYzJgOpBuZvKpWwOrDeXeYxDqRiEzXfDeCmQmVzSuCmXrAiMpNzQjByNoVnIlQyQuFaGqNpPvFgLbSuFpFtAkMcKhStXqPkYaEuSuLmJcZdTwTbIdVvVbHzByNjXbTbIlCvGuYhLeOqBrInMfWsKkCcYtUzFdMqAtUbNxYgRaGnWfZtEdLdKvJsJiCbMxSmZpRrMgNhKpNvYuGcUkIpAkVgTkHdFvQoJqXtUaHnUlYyS</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="content">NeXyCaDdJfWaIkDhWmMrDnBdDjTdPwCqIkJbDiKfVjCfIoTmUmUqHfJbDoOwUuAcMeIdGbVxUhAiUnNoUiSeGdPxJoIkXlYmHxWzVyCfNwKnRtRjIoWmFySzHtRlNyTkBtEhEvZzXlLkMuNdCnLlSbHeHaDnAbKgIsZmBgHfKwHvGoCjNhMpKlXnJsDrOxPzGpUgIaChYtIpRkWmFaNrRiIiJhAoSzUeHpWvAhJtExFsAzUhVqKfXhGiJrLoYdI</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-3</value>
+        <value description="expiredTime">2015-06-09</value>
+        <value description="ifAccessLimited">0</value>
+        <value description="newsType_id">-3</value>
+        <value description="thumbnailUrl">HjXyHmPnVzEpRnLrCdKjSwPfCkJgNrByHtSpAaPqYlJxFrDtPlEmKgUoYfGcGhXhHuJsQjNlToMeCoHnSzObGmPxSlIvUuFdUlQdZaGdXsGoIeBrSzPrDzXvDaBuKiAhSjTqNeOxTcWtLmToSnMgGlDqHxIkIaJfFyXgXhMyUoAuGgLrGzRfUiYoFvOiIkUpHzVqRzCvKnZbOlQlHpCjBaWcBmEjYqImVcXuMtMxGiGqNwKjHiWlJpMrEzYwLeP</value>
+        <value description="title">DaBbDjLxCiTjTvSpIsWyNtLwLsKfRpVgWuPqNgOhXtRpQlWjCrAhApSzMeUsSjXsJpEnAxFyPmHnNmCyCuEbPnHsFoDdGtLuXmLpGvUlVqBiViOsQjJiUpVsWoYqKhDeJlLlSuOzFoQpZzPkCwCtGuDzOzUtRlDpTwPiUgUtMrFiVtZrOoWqYsUjFmEkWjFnWhHfGdUpSeYeYeWwMjOhYnZhCoSpJwFfFpLlAcSeVdUvUxSaZdLpBdRaKvPnItU</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    </table>
+    <!--News-END-->
 </dataset>
+
 
 
 

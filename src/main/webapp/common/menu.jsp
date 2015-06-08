@@ -36,6 +36,9 @@
     <!--NewsType-START-->
     <menu:displayMenu name="NewsTypeMenu"/>
     <!--NewsType-END-->
+    <!--News-START-->
+    <menu:displayMenu name="NewsMenu"/>
+    <!--News-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

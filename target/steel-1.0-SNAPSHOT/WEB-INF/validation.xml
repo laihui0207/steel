@@ -76,5 +76,12 @@
         <form name="newsType">
         </form>
         <!--NewsType-END-->
+        <!--News-START-->
+        <form name="news">
+            <field property="ifAccessLimited" depends="required">
+                <arg key="news.ifAccessLimited"/>
+            </field>
+        </form>
+        <!--News-END-->
     </formset>
 </form-validation>
