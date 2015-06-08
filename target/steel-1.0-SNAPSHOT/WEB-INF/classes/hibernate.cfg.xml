@@ -13,6 +13,6 @@
     
         <mapping class="com.huivip.steel.model.UserGroup"/>
         <mapping class="com.huivip.steel.model.NewsType"/>
-        <mapping class="com.huivip.steel.model.News"/>
+    
     </session-factory>
 </hibernate-configuration>

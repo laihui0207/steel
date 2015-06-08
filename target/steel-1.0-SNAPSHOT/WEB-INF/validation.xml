@@ -70,13 +70,8 @@
         <form name="userGroup">
         </form>
         <!--UserGroup-END-->
-        <!--News-START-->
-        <form name="news">
-            <field property="ifAccessLimited" depends="required">
-                <arg key="news.ifAccessLimited"/>
-            </field>
-        </form>
-        <!--News-END-->
+        
+        
         <!--NewsType-START-->
         <form name="newsType">
         </form>

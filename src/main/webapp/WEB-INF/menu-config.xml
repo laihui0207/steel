@@ -23,13 +23,13 @@
         <!--UserGroup-START-->
         <Menu name="UserGroupMenu" title="userGroupList.title" page="/userGroups"/>
         <!--UserGroup-END-->
-        <!--News-START-->
-        <Menu name="NewsMenu" title="newsList.title" page="/newss"/>
-        <!--News-END-->
+        
+        
         <!--NewsType-START-->
         <Menu name="NewsTypeMenu" title="newsTypeList.title" page="/newsTypes"/>
         <!--NewsType-END-->
     </Menus>
+
 
 
 

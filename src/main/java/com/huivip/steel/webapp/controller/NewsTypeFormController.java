@@ -71,8 +71,8 @@ public class NewsTypeFormController extends BaseFormController {
         } else {
             final User cleanUser = getUserManager().getUserByUsername(
                     request.getRemoteUser());
-            newsType.setUpdater(cleanUser);
             newsType.setCreater(cleanUser);
+            newsType.setUpdater(cleanUser);
             newsTypeManager.save(newsType);
             String key = (isNew) ? "newsType.added" : "newsType.updated";
             saveMessage(request, getText(key, locale));

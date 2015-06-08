@@ -31,9 +31,8 @@
     <!--UserGroup-START-->
     <menu:displayMenu name="UserGroupMenu"/>
     <!--UserGroup-END-->
-    <!--News-START-->
-    <menu:displayMenu name="NewsMenu"/>
-    <!--News-END-->
+    
+    
     <!--NewsType-START-->
     <menu:displayMenu name="NewsTypeMenu"/>
     <!--NewsType-END-->
