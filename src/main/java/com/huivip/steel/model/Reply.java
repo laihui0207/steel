@@ -1,7 +1,7 @@
 package com.huivip.steel.model;
 
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -35,7 +35,7 @@ public class Reply extends BaseObject implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getContent() {
         return content;
     }

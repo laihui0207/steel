@@ -35,18 +35,18 @@
 </div>
 
 <display:table name="newsList" class="table table-condensed table-striped table-hover" requestURI="" id="newsList" export="true" pagesize="25">
+    <%--<display:column title="Thumbnail" sortable="false" media="html">
+        <img src="${newsList.thumbnailUrl}"/>
+    </display:column>--%>
     <display:column property="id" sortable="true" href="newsform" media="html"
         paramId="id" paramProperty="id" titleKey="news.id"/>
     <display:column property="id" media="csv excel xml pdf" titleKey="news.id"/>
-    <display:column property="content" sortable="true" titleKey="news.content"/>
+    <display:column property="title" sortable="true" titleKey="news.title" href="/newss/view"  paramProperty="id" paramId="id"/>
     <display:column property="createTime" sortable="true" titleKey="news.createTime"/>
     <display:column property="expiredTime" sortable="true" titleKey="news.expiredTime"/>
     <display:column sortProperty="ifAccessLimited" sortable="true" titleKey="news.ifAccessLimited">
         <input type="checkbox" disabled="disabled" <c:if test="${newsList.ifAccessLimited}">checked="checked"</c:if>/>
     </display:column>
-    <display:column property="thumbnailUrl" sortable="true" titleKey="news.thumbnailUrl"/>
-    <display:column property="title" sortable="true" titleKey="news.title"/>
-    <display:column property="updateTime" sortable="true" titleKey="news.updateTime"/>
 
     <display:setProperty name="paging.banner.item_name"><fmt:message key="newsList.news"/></display:setProperty>
     <display:setProperty name="paging.banner.items_name"><fmt:message key="newsList.newss"/></display:setProperty>

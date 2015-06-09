@@ -1,7 +1,7 @@
 package com.huivip.steel.model;
 
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -39,7 +39,7 @@ public class PostType extends BaseObject implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    @Field(index= org.hibernate.search.annotations.Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getName() {
         return name;
     }
@@ -47,7 +47,7 @@ public class PostType extends BaseObject implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     public String getComment() {
         return comment;
     }
@@ -56,7 +56,7 @@ public class PostType extends BaseObject implements Serializable {
         this.comment = comment;
     }
     @ManyToOne
-    @JoinColumn(name="creater_id")
+    @JoinColumn(name="creater_id",updatable = false)
     public User getCreater() {
         return creater;
     }

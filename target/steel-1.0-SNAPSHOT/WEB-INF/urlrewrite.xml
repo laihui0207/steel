@@ -47,6 +47,10 @@
         <to>/images/$1</to>
     </rule>
     <rule>
+        <from>/attached/**</from>
+        <to>/attached/$1</to>
+    </rule>
+    <rule>
         <from>/scripts/**</from>
         <to>/scripts/$1</to>
     </rule>

@@ -9,36 +9,11 @@
         </li>
     </c:if>
     <menu:displayMenu name="Home"/>
+    <menu:displayMenu name="News"/>
+    <menu:displayMenu name="Posts"/>
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!--UserGroup-START-->
-    <menu:displayMenu name="UserGroupMenu"/>
-    <!--UserGroup-END-->
-    
-    
-    <!--NewsType-START-->
-    <menu:displayMenu name="NewsTypeMenu"/>
-    <!--NewsType-END-->
-    <!--News-START-->
-    <menu:displayMenu name="NewsMenu"/>
-    <!--News-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

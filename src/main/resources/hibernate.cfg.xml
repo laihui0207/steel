@@ -15,5 +15,8 @@
         <mapping class="com.huivip.steel.model.NewsType"/>
     
         <mapping class="com.huivip.steel.model.News"/>
+        <mapping class="com.huivip.steel.model.PostType"/>
+        <mapping class="com.huivip.steel.model.Post"/>
+        <mapping class="com.huivip.steel.model.Reply"/>
     </session-factory>
 </hibernate-configuration>

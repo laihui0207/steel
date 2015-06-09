@@ -24,7 +24,7 @@
 
     <!-- runs all targets -->
     <target name="run-all-tests"
-        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,NewsTests,NewsTypeTests,NewsTypeTests,UserGroupTests"
+        depends="Login,Logout,PasswordHint,Signup,UserTests,StaticPages,WebServices,DWR,FileUpload,PostTypeTests,PostTests,ReplyTests,NewsTests,NewsTypeTests,NewsTypeTests,UserGroupTests"
         description="Call and executes all test cases (targets)"/>
 
     <!-- runs user-related tests -->
@@ -550,7 +550,288 @@
             </steps>
         </webtest>
     </target>    <!--News-END-->
+    <!--Reply-START-->
+    <!-- runs reply-related tests -->
+    <target name="ReplyTests"
+            depends="SearchReplies,EditReply,SaveReply,AddReply,DeleteReply"
+            description="Call and executes all reply test cases (targets)">
+        <echo>Successfully ran all Reply UI tests!</echo>
+    </target>
+
+    <!-- Verify the replies list screen displays without errors -->
+    <target name="SearchReplies" description="Tests search for and displaying all replies">
+        <webtest name="searchReplies">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View Reply link" url="/replies"/>
+                <verifytitle description="we should see the replyList title"
+                    text=".*${replyList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the replyList title"
+                    text=".*${replyList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit reply screen displays without errors -->
+    <target name="EditReply" description="Tests editing an existing Reply's information">
+        <webtest name="editReply">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View Reply List" url="/replies"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the replyDetail title"
+                    text=".*${replyDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a reply and then save -->
+    <target name="SaveReply" description="Tests editing and saving a reply">
+        <webtest name="saveReply">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Reply link" url="/replyform?id=-1"/>
+                <verifytitle description="we should see the replyDetail title"
+                    text=".*${replyDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${replyDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${reply.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new Reply -->
+    <target name="AddReply" description="Adds a new Reply">
+        <webtest name="addReply">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/replyform"/>
+                <verifytitle description="we should see the replyDetail title"
+                    text=".*${replyDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="Reply List appears if save successful"
+                    text=".*${replyList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${reply.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing reply -->
+    <target name="DeleteReply" description="Deletes existing Reply">
+        <webtest name="deleteReply">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Reply link" url="/replyform?id=-1"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifytitle description="display Reply List" text=".*${replyList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${reply.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--Reply-END-->
+    <!--Post-START-->
+    <!-- runs post-related tests -->
+    <target name="PostTests"
+            depends="SearchPosts,EditPost,SavePost,AddPost,DeletePost"
+            description="Call and executes all post test cases (targets)">
+        <echo>Successfully ran all Post UI tests!</echo>
+    </target>
+
+    <!-- Verify the posts list screen displays without errors -->
+    <target name="SearchPosts" description="Tests search for and displaying all posts">
+        <webtest name="searchPosts">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View Post link" url="/posts"/>
+                <verifytitle description="we should see the postList title"
+                    text=".*${postList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the postList title"
+                    text=".*${postList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit post screen displays without errors -->
+    <target name="EditPost" description="Tests editing an existing Post's information">
+        <webtest name="editPost">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View Post List" url="/posts"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the postDetail title"
+                    text=".*${postDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a post and then save -->
+    <target name="SavePost" description="Tests editing and saving a post">
+        <webtest name="savePost">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Post link" url="/postform?id=-1"/>
+                <verifytitle description="we should see the postDetail title"
+                    text=".*${postDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+                <setCheckbox description="set ifAccessAllReply" name="ifAccessAllReply" value="true"/>
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${postDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${post.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new Post -->
+    <target name="AddPost" description="Adds a new Post">
+        <webtest name="addPost">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/postform"/>
+                <verifytitle description="we should see the postDetail title"
+                    text=".*${postDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+                <setCheckbox description="set ifAccessAllReply" name="ifAccessAllReply" value="true"/>
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="Post List appears if save successful"
+                    text=".*${postList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${post.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing post -->
+    <target name="DeletePost" description="Deletes existing Post">
+        <webtest name="deletePost">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit Post link" url="/postform?id=-1"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifytitle description="display Post List" text=".*${postList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${post.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--Post-END-->
+    <!--PostType-START-->
+    <!-- runs postType-related tests -->
+    <target name="PostTypeTests"
+            depends="SearchPostTypes,EditPostType,SavePostType,AddPostType,DeletePostType"
+            description="Call and executes all postType test cases (targets)">
+        <echo>Successfully ran all PostType UI tests!</echo>
+    </target>
+
+    <!-- Verify the postTypes list screen displays without errors -->
+    <target name="SearchPostTypes" description="Tests search for and displaying all postTypes">
+        <webtest name="searchPostTypes">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click View PostType link" url="/postTypes"/>
+                <verifytitle description="we should see the postTypeList title"
+                    text=".*${postTypeList.title}.*" regex="true"/>
+                <setinputfield description="set search term" name="q" value="*"/>
+                <clickbutton label="${button.search}" description="Click Search"/>
+                <verifytitle description="we should see the postTypeList title"
+                    text=".*${postTypeList.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Verify the edit postType screen displays without errors -->
+    <target name="EditPostType" description="Tests editing an existing PostType's information">
+        <webtest name="editPostType">
+            &config;
+            <steps>
+                &login;
+                <invoke description="View PostType List" url="/postTypes"/>
+                <clicklink label="-1" description="Click edit link"/>
+                <verifytitle description="we should see the postTypeDetail title"
+                    text=".*${postTypeDetail.title}.*" regex="true"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Edit a postType and then save -->
+    <target name="SavePostType" description="Tests editing and saving a postType">
+        <webtest name="savePostType">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit PostType link" url="/postTypeform?id=-1"/>
+                <verifytitle description="we should see the postTypeDetail title"
+                    text=".*${postTypeDetail.title}.*" regex="true"/>
+
+                <!-- update some of the required fields -->
+
+                <clickbutton label="${button.save}" description="Click Save"/>
+                <verifytitle description="Page re-appears if save successful"
+                    text=".*${postTypeDetail.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${postType.updated}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Add a new PostType -->
+    <target name="AddPostType" description="Adds a new PostType">
+        <webtest name="addPostType">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Add Button" url="/postTypeform"/>
+                <verifytitle description="we should see the postTypeDetail title"
+                    text=".*${postTypeDetail.title}.*" regex="true"/>
+
+                <!-- enter required fields -->
+
+                <clickbutton label="${button.save}" description="Click button 'Save'"/>
+                <verifytitle description="PostType List appears if save successful"
+                    text=".*${postTypeList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${postType.added}"/>
+            </steps>
+        </webtest>
+    </target>
+
+    <!-- Delete existing postType -->
+    <target name="DeletePostType" description="Deletes existing PostType">
+        <webtest name="deletePostType">
+            &config;
+            <steps>
+                &login;
+                <invoke description="click Edit PostType link" url="/postTypeform?id=-1"/>
+                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
+                <verifytitle description="display PostType List" text=".*${postTypeList.title}.*" regex="true"/>
+                <verifytext description="verify success message" text="${postType.deleted}"/>
+            </steps>
+        </webtest>
+    </target>    <!--PostType-END-->
 </project>
+
+
+
 
 
 

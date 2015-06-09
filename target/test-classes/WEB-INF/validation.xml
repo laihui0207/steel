@@ -83,5 +83,20 @@
             </field>
         </form>
         <!--News-END-->
+        <!--Reply-START-->
+        <form name="reply">
+        </form>
+        <!--Reply-END-->
+        <!--Post-START-->
+        <form name="post">
+            <field property="ifAccessAllReply" depends="required">
+                <arg key="post.ifAccessAllReply"/>
+            </field>
+        </form>
+        <!--Post-END-->
+        <!--PostType-START-->
+        <form name="postType">
+        </form>
+        <!--PostType-END-->
     </formset>
 </form-validation>

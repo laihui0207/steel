@@ -5,6 +5,8 @@ import com.huivip.steel.model.NewsType;
 import com.huivip.steel.model.User;
 import com.huivip.steel.service.NewsManager;
 import com.huivip.steel.service.NewsTypeManager;
+import com.huivip.steel.util.SteelConfig;
+import com.huivip.steel.util.Thumbnail;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/newsform*")
@@ -83,6 +87,7 @@ public class NewsFormController extends BaseFormController {
         } else {
             final User cleanUser = getUserManager().getUserByUsername(
                     request.getRemoteUser());
+            handleThumbnail(news);
             news.setCreater(cleanUser);
             newsManager.save(news);
             String key = (isNew) ? "news.added" : "news.updated";
@@ -111,6 +116,29 @@ public class NewsFormController extends BaseFormController {
                     }
                 }
             });
+    }
+
+    private void handleThumbnail(News news){
+        String imgRegex="<img.*?(?: |\\t|\\r|\\n)?src=['\"]?(.+?)['\"]?(?:(?: |\\t|\\r|\\n)+.*?)?>";
+        Pattern r = Pattern.compile(imgRegex);
+        Matcher m=r.matcher(news.getContent());
+        String attacheDir= SteelConfig.getConfigureAttachDir();
+        if(null==attacheDir || attacheDir.length()==0){
+            attacheDir=getServletContext().getRealPath("/");
+        }
+        if(!attacheDir.endsWith("/")){
+            attacheDir+="/";
+        }
+        if(m.find()){
+            String imgUrl=m.group(1);
+            String fileUrl=attacheDir+imgUrl;
+            //to do  check if need create thumbnail
+            Thumbnail.thumbnail_create(fileUrl.substring(0, fileUrl.lastIndexOf("/") + 1),
+                    fileUrl.substring(fileUrl.lastIndexOf("/") + 1));
+            String thumbnailURL=imgUrl.substring(0,imgUrl.lastIndexOf("/")+1)+imgUrl.substring(imgUrl.lastIndexOf("/")+1,
+                    imgUrl.lastIndexOf("."))+"_smaller"+imgUrl.substring(imgUrl.lastIndexOf("."));
+            news.setThumbnailUrl(thumbnailURL);
+        }
     }
 
 }

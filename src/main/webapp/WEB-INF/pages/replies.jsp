@@ -40,6 +40,7 @@
     <display:column property="id" media="csv excel xml pdf" titleKey="reply.id"/>
     <display:column property="content" sortable="true" titleKey="reply.content"/>
     <display:column property="replyTime" sortable="true" titleKey="reply.replyTime"/>
+    <display:column property="updateTime" sortable="true" titleKey="reply.updateTime"/>
 
     <display:setProperty name="paging.banner.item_name"><fmt:message key="replyList.reply"/></display:setProperty>
     <display:setProperty name="paging.banner.items_name"><fmt:message key="replyList.replies"/></display:setProperty>

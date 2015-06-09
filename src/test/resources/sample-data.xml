@@ -267,7 +267,136 @@
     </row>
     </table>
     <!--News-END-->
+    <!--Reply-START-->
+    <table name="replies">
+        <column>id</column>
+        <column>content</column>
+        <column>post_id</column>
+        <column>replier_id</column>
+        <column>replyTime</column>
+        <column>updateTime</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="content">HpMtKrFbNqVrGeUuOiKhWyQbIjSiIdFdBgQbGcHnZxZtZzFqBhXsRySzXsDrEzFdGnQmXrGzNxZsCzPiXfZcNqPtClPrKaBzNeWuBkHnYgFaMtAnLmXbFxCfFoImHjKkIzTqOoIlEjVfTuQfFsAmQfMfHlGyAjRrPgIqQzFeHxCjEpMsYfSfDxWrLrKbSlSeLiLdSzTeVkClTtIsFwIjHcKtKmUwQzXbIoArXbRlNhMiSpSuTaYoRtDgBgJcWhK</value>
+        <value description="post_id">-1</value>
+        <value description="replier_id">-1</value>
+        <value description="replyTime">2015-06-09</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="content">KcKoHiEdUaZrVzTnVvUuVeWyJpLbStZqDuTzRiCzYyLeAfIlZwPfBlFuOnJnAePcZfTtSzDbKmWeVvVzVjWaVnWyRiAsTrQiRbJyEzZtVpNkWkZoSbCpZuKbOeCyUzGgNfXcYtXtNgBgPfFwIhCxCfEuNuHdJvZnCgAsBpGgKhYgMiUqPtLeRqUdLpYdRsFnFeSoJlWgUtBkUmVjVjHeXsAyVnTtMoAgHmWuJoJbZqTjIrEoBiLqKoToJiAjCuG</value>
+        <value description="post_id">-2</value>
+        <value description="replier_id">-2</value>
+        <value description="replyTime">2015-06-09</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="content">OpPpNaOzHrOzHlQoDqTlUrFfSkVtPpKyThBpUfWdRtCuJoSeYeZfPcWrWdZlIiSwIeRtJeFdRlUzKqEjUoXwPyRcOqNsWnWkYeHbEjJwVlBcNxHpPkUmMbPhCgKmQjCrUmGpXiHiUtVoMgFsQsUrTdSdQkCiNcQwYsUgPeNrFeTdZfUjIpRuRzNbGjNyJpSuHqVxZxNdFpOsEwPuAkRxKgTzMsTbRzPwNjEuNhRuWfLcRmLtEiQsKkFgYjOkPrL</value>
+        <value description="post_id">-3</value>
+        <value description="replier_id">-3</value>
+        <value description="replyTime">2015-06-09</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    </table>
+    <!--Reply-END-->
+    <!--Post-START-->
+    <table name="post">
+        <column>id</column>
+        <column>content</column>
+        <column>createTime</column>
+        <column>creater_id</column>
+        <column>ifAccessAllReply</column>
+        <column>lastReplyTime</column>
+        <column>lastReplier_id</column>
+        <column>posttype_id</column>
+        <column>thumbnailUrl</column>
+        <column>title</column>
+        <column>updateTime</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="content">GoGvEsYhXuYkQtCwEhZfCbTcSuVoJfNbCxFbLkSjGxNwLzShDpJgIlOuQjZcCwUtEeZmBmOyJgSwHcZwIpNiCnHqSmEsNyKaJrVhZfDwQzFoJnHyOqBgWlQvDfDqNxWbEbZrTpOgWzKtJyNeQiWyTmZrBnGrVaYqKsIfUsXjGtGeDtKvHxUsFeAfRdCfOvGoQdGtFsBtUjXpIbWgRvPjUtXqOvTvGhNlIrOjTlVgQvZnOlSuRpGgFoGlKsSvVwU</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-1</value>
+        <value description="ifAccessAllReply">0</value>
+        <value description="lastReplyTime">2015-06-09</value>
+        <value description="lastReplier_id">-1</value>
+        <value description="posttype_id">-1</value>
+        <value description="thumbnailUrl">QvOwLzCjSxNxUpNmWxVgMsFuHtWsFhZwLbYfIsKsUpBnVyLvGsTjUrObSdKgWcRfOvPvBxQnSzFcWnQmTlOpFmBhJoLuZdOyTeMhEhJmVwJhLtAoWzLhGnJsIzSvRzBfWcUsFzZhYpXpHxCvAtQuEnLcVhYoAdUpAnBlYpVoFwBbImTiXkSxVfKiDhBoCvGyAjWtHdKoAzWbXbWoXoGxEeZlRgEtLuVmCeGbFzYfJmPlMiOiAzQxSvGzIjZvWmW</value>
+        <value description="title">AuMxCaYaQhTcAiJiIzQdZqVjHhRnPdLfPiDiRtXsQsZuBpDtTnPiFnQuHsEzUjYwDwBgGzLrPlQmFrFgIyKoKgKrObHyAhZxNjBlGvTvMkQtUoYcHcSyHyZhKjGrGaHrAjHoFcZzJdKpXyQvXdYjDnJgMxHyAxWgPmGoLxMxWrPaGyBtEfKvHdChLeKvJuLdXlWyVfVmEjNcYrGtQvPbDeJvWvAuWjPeGfCpWcLiYkOkTpOkPuVkKhUpRhMgRvV</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="content">RwRmUaQdNvCyKiKwFoDwVmUaMjGwFkWvAkXeIiThMyTrGxBgHyOfIeGfPzSfCmWhDwSyBdQsKvSyWgDmZuDdMrJvTuXvWkFuRnEwNgYoPoPjGsHkCdUnKrZuZwXyOzYvAgTsBfZpIxTxXpBvGiSlQzQuOiBoXtXjScKeWvBpVgCwSxZmFuOiSzAvYbBmFuSjHyCtQdLcLcCbWaWjYtAhPtXfIwCxLtEuEuLmDiFhIlDiHdHaOqPoPeEmEmAuVbC</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-2</value>
+        <value description="ifAccessAllReply">0</value>
+        <value description="lastReplyTime">2015-06-09</value>
+        <value description="lastReplier_id">-2</value>
+        <value description="posttype_id">-2</value>
+        <value description="thumbnailUrl">OsUsJgDlKzBwGdJlVpHwLlNiSaHfXgMcGuWzLcLwXjYbGkNeIsTpGrYyHvTkVmUvNmRrWtYlKcLrTeWiGiClSdOpPcSuJzXjAzIdOpLlRcBaQuNdIxStJxPbEqJkGqCyRrZtNrZoPcCiBnNfQzPrQlWlZnVyWcKuXvFzDpPpWwAnLbQmFcClOsLaDaYiJaNiLzWyCfXaPhKfQvFoReVyJzQaNaDdGzTrEdZcAfJaJbCbOfJeKaRpXsDrBvRxSxI</value>
+        <value description="title">FeUiByDoUgEmAtZfCrFnLlJnRzUfQsWsPjMsAjRsWmGcNnDrCfCoJuCwRkRkZyWsUvJvBlYoAcKnDeZgIdFoUnCvHgVaCjBcSzGkXkLkFvDlXjHfTsPsMqNsBeWbDrAeQqTgVdVkSkUbCzAyBvBhOfPxYaRgZeRcKjQeYfGfSyRqQfXpQkQbZrAuUlIuZbXtIfTkPdStBuIhJmQzZgNoWvKjIqRkGpYqVlSuApZiBgZiEhZrZbDwOsGsFlVlXuQ</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="content">HxYeCkGjVbBiHqTnLcQhGrEzHjSaJuKePiKiPaSzLnRnUqPhWcMyWiZjTrZvQlUwSnCoStOgMcBjHmOvDmPwNrGySsDmLzNpAdRkDqZsIlOyDfRmIzKvWaVcEaPpFwXwJuKoDbGuUmGgAxFyTlBtXoFyThRvTfVrPuOrDsUdTxIiNtLaLvBmPwOvMcChIvXkGmYrKgJeZwThYtCrGlWlUoAuVtVqLjUyTpAyCvJpCbJbNgVhWpCrJxGnTjIwAsY</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-3</value>
+        <value description="ifAccessAllReply">0</value>
+        <value description="lastReplyTime">2015-06-09</value>
+        <value description="lastReplier_id">-3</value>
+        <value description="posttype_id">-3</value>
+        <value description="thumbnailUrl">BjZvKqErPaWyZqIvEdJsIqCfLfEqGbNkCzJoZfUlVkWuXmMwNxOlCcNjYvHdGeGtYuVbHoHjBrOhJwXpErEuZgHuByKjBtFvCfVxPzHcXvLcCmKcAxTvMuDuKsBbFaBaBhGjZsDwRyBeVcHjRgIrXbKvBmTlJqGiAaBwSiInPsReGcUpAiMwTqOkBrXzOiEkXhRtCrTpLgYnGoIhInNcTjMlAqKbLzBzIvGbHwRvAdWxNeRtReBnVkQxUuWeArO</value>
+        <value description="title">IzKjPnMkUkTzUcTkVhXxRjTuNwEyCnMgIpJzQmGqVxXzXoOxXkGcFvSsTiAbTkVpOmMsFeTyGsPkSfNbFgRzRpDkIvVbVwSeMxUaGpLiUnCnOoBtFlLdJaHeQeMmVmVuGlBbQeBlEoHrWcNjMmHvWqJrOmTvRyElMpCpQbYkFtEtNgVkMjXgHwFbOrXhZgObMuQbNwDrWhVwSuHqCwUuHuEvZvTmCeTnMkHcNqDlQdIkSbTjWsLmYdGmMeUoEsS</value>
+        <value description="updateTime">2015-06-09</value>
+    </row>
+    </table>
+    <!--Post-END-->
+    <!--PostType-START-->
+    <table name="posttype">
+        <column>id</column>
+        <column>comment</column>
+        <column>createTime</column>
+        <column>creater_id</column>
+        <column>name</column>
+        <column>updateTime</column>
+        <column>updater_id</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="comment">MxNpEbXjBgMjCjFvGhQoSjIqTpPsMjOxWzFwJfDlHgHnIqUrKxUhRnCwPvNrEyHoWkJoCkUhHmOzBcPqSmEtGsSmYlOaZiEmYlTmTaSaOjQvAmEdYiLjImGxWhKzZiQpNkBcNaUfXgObPwRnFdExOiVxMsIfVsGmTbOtUvGwPrKyHyPoAhXqPgNsCfRjVxOhDkFbOpVjJeAlFxMwXuDcBrCzTcPuDrYaOkAxLjLuKeShFmDaSdXzHgQiXrEmGkZ</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-1</value>
+        <value description="name">CrFkJnCyMzGmVqAbJzQjFoKkBjPkJuGaAhMhXyDiYnLhObYcWnAvNoPbAoIxPlZwJhBwAdYyScBuPrRfZnAtWcKgWcAnLiOsAoWaZxXcUxScPiKuLlLhMxIfIfPjFiOqTkZwUjMxEcFvRmNwNsMbBcGrDaCaIbExXwBoOiUiSaIrBuWyBbEtZgVgSqCdYqDwJtZjXsApAjIvHlPsOtFrDlKqMpUyPcIyUlSwYoRrXyZyIlFiNmXwSxYmGpUmFvA</value>
+        <value description="updateTime">2015-06-09</value>
+        <value description="updater_id">-1</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="comment">UgJkNbAiExKrDpGoReYjAlKmJaMrPgIfZsKwRiNlJbKzMgRqDcKfEvPlYqOjRfFdRjSeFyOsObWfNtYzLsReCbSpHiWcFgMgQmTlHeKgSiRmEuExSgFcPqObWuBmVjZgOhOcMfEnDvLwWjXqZqOiDtQpEeGpMjEmMkHgZlCwRuRwUaAsWhZbWmObGsJzClEkQzCeGdDfCrCaQoXvFgIgVpXiXeNaCyYrMaYlPbWwLoDzKuTtOlImFkXhLeViMeU</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-2</value>
+        <value description="name">ZxQbVqNjUcSyOlPfPiMxKfWvAvUeXeTfSsBlVbTrYuKjIyLhGmIuZvBkOpRrTgAuFoJpEsJgZvUjGmSlClQmNaSjLnZaTyRkWsApXwZyFuMoOwTzBiXmMhInXfAfPlYzFpBkIvQxQiYaCfWtTdHoWeBzFdWoGfOyCdCgMqOwNgHoOlPwAqHlRhIkYsHvMlJkMmDqTfEyWvKvKtNwPzYwRlHwDxVtRuYhFeXfSrMePiGcTnUhGbImIbXtAxLwVlS</value>
+        <value description="updateTime">2015-06-09</value>
+        <value description="updater_id">-2</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="comment">ZcIiDkRjUlZjBkMmArXxNeWaXlXzFaFxXhFgNmLtJoXsUmZuJjEqHiVsBmOgVxDhTyWlIcUaMaPqJdPqAcCyAcIaPcGdCmDtLyHxGpGbPxHkChCoQxReIfOuMfZaKfBeWdPgFvUzXkBoTbNsHlBfGwEwIaAmGkXwOoPlRgNsVcRrJbKhKjEfCjGlZoKhKtGvQcOaOxUdNwZqSdPcYcPyLvMsElJlHzCnDmDzGbNgToPuWjYhPtRyAgPwIyTtVhS</value>
+        <value description="createTime">2015-06-09</value>
+        <value description="creater_id">-3</value>
+        <value description="name">XnBtPuLpZvKpNdFnQrKaHkRyDyEjJjGaOhNbXpOwLyFqCyXxQuQzJlUnFaUxYxRyEdErZaLaNyDiQkGwIaCuAjOcXmTmMnJhGfBiVqJaTuOuNvMdZiPkZuMrCmFjBeCpClWzFfDnCyIlZmPqFeJcJdNcUhZyKoBkAmJiDoMtLmCcQvPsJhKcRkWzOaZwUkJuUpCuBcLqAuYjYuJvBbJkUaQaFyZmGaVbIxAeZxOwEgLdEjMkApJwMwTeRvWsYtE</value>
+        <value description="updateTime">2015-06-09</value>
+        <value description="updater_id">-3</value>
+    </row>
+    </table>
+    <!--PostType-END-->
 </dataset>
+
+
+
 
 
 
