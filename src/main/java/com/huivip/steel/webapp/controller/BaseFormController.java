@@ -21,6 +21,7 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -166,6 +167,8 @@ public class BaseFormController implements ServletContextAware {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, null, 
                                     new CustomDateEditor(dateFormat, true));
+        binder.registerCustomEditor(Timestamp.class, null,
+                new CustomDateEditor(dateFormat, true));
     }
 
     /**

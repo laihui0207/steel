@@ -41,12 +41,16 @@
     <display:column property="id" sortable="true" href="newsform" media="html"
         paramId="id" paramProperty="id" titleKey="news.id"/>
     <display:column property="id" media="csv excel xml pdf" titleKey="news.id"/>
-    <display:column property="title" sortable="true" titleKey="news.title" href="/newss/view"  paramProperty="id" paramId="id"/>
+    <display:column property="title" sortable="true" titleKey="news.title"/>
+    <display:column property="newsType.name" sortable="true" titleKey="news.newsType" />
     <display:column property="createTime" sortable="true" titleKey="news.createTime"/>
     <display:column property="expiredTime" sortable="true" titleKey="news.expiredTime"/>
-    <display:column sortProperty="ifAccessLimited" sortable="true" titleKey="news.ifAccessLimited">
+    <display:column  sortable="false" titleKey="news.Action">
+        <a href="/newss/view?id=${newsList.id}" target="_blank">View</a>
+            </display:column>
+    <%--<display:column sortProperty="ifAccessLimited" sortable="true" titleKey="news.ifAccessLimited">
         <input type="checkbox" disabled="disabled" <c:if test="${newsList.ifAccessLimited}">checked="checked"</c:if>/>
-    </display:column>
+    </display:column>--%>
 
     <display:setProperty name="paging.banner.item_name"><fmt:message key="newsList.news"/></display:setProperty>
     <display:setProperty name="paging.banner.items_name"><fmt:message key="newsList.newss"/></display:setProperty>

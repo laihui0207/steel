@@ -1,5 +1,6 @@
 package com.huivip.steel.model;
 
+import com.sun.istack.NotNull;
 import org.hibernate.search.annotations.*;
 import org.hibernate.search.annotations.Index;
 
@@ -40,6 +41,7 @@ public class NewsType extends BaseObject implements Serializable {
         this.id = id;
     }
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @NotNull
     public String getName() {
         return name;
     }

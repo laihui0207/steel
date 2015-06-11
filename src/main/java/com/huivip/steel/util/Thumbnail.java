@@ -119,6 +119,34 @@ public class Thumbnail {
                     null, ex);
         }
     }
+    public static String parsingImage(String content,String contextPath){
+        String imgRegex = "<img.*?(?: |\\t|\\r|\\n)?src=['\"]?(.+?)['\"]?(?:(?: |\\t|\\r|\\n)+.*?)?>";
+        String imgeURL="";
+        Pattern r = Pattern.compile(imgRegex);
+        Matcher m = r.matcher(content);
+        String attacheDir = SteelConfig.getConfigureAttachDir();
+        if (null == attacheDir || attacheDir.length() == 0) {
+            attacheDir = contextPath;
+        }
+        if (!attacheDir.endsWith("/")) {
+            attacheDir += "/";
+        }
+        while (m.find()) {
+            String imgUrl = m.group(1);
+            if (imgUrl.indexOf("attached") < 0) {
+                continue;
+            }
+            String fileUrl = attacheDir + imgUrl;
+            //to do  check if need create thumbnail
+            Thumbnail.thumbnail_create(fileUrl.substring(0, fileUrl.lastIndexOf("/") + 1),
+                    fileUrl.substring(fileUrl.lastIndexOf("/") + 1));
+            String thumbnailURL = imgUrl.substring(0, imgUrl.lastIndexOf("/") + 1) + imgUrl.substring(imgUrl.lastIndexOf("/") + 1,
+                    imgUrl.lastIndexOf(".")) + "_smaller" + imgUrl.substring(imgUrl.lastIndexOf("."));
+            imgeURL=thumbnailURL;
+            break;
+        }
+        return imgeURL;
+    }
     public static void main(String[] args){
         //Thumbnail thumbnail=new Thumbnail();
         //thumbnail.thumbnail_create("/Users/sunlaihui/Documents/workspace/javaspace/steel/src/main/webapp/attached/image/20150609/","20150609_231.jpg");

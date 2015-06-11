@@ -129,8 +129,11 @@ public class NewsFormController extends BaseFormController {
         if(!attacheDir.endsWith("/")){
             attacheDir+="/";
         }
-        if(m.find()){
+        while(m.find()){
             String imgUrl=m.group(1);
+            if(imgUrl.indexOf("attached")<0){
+                continue;
+            }
             String fileUrl=attacheDir+imgUrl;
             //to do  check if need create thumbnail
             Thumbnail.thumbnail_create(fileUrl.substring(0, fileUrl.lastIndexOf("/") + 1),
@@ -138,6 +141,7 @@ public class NewsFormController extends BaseFormController {
             String thumbnailURL=imgUrl.substring(0,imgUrl.lastIndexOf("/")+1)+imgUrl.substring(imgUrl.lastIndexOf("/")+1,
                     imgUrl.lastIndexOf("."))+"_smaller"+imgUrl.substring(imgUrl.lastIndexOf("."));
             news.setThumbnailUrl(thumbnailURL);
+            break;
         }
     }
 

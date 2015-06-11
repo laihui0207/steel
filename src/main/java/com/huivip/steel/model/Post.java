@@ -1,5 +1,6 @@
 package com.huivip.steel.model;
 
+import com.sun.istack.NotNull;
 import org.hibernate.search.annotations.*;
 import org.hibernate.search.annotations.Index;
 
@@ -29,7 +30,7 @@ public class Post extends BaseObject implements Serializable {
     private PostType postType;
 
     // if true, all user can reply the post, if false, just allow reply groups and reply user can reply the post
-    private boolean ifAccessAllReply;
+    private boolean ifAccessAllReply= true;
     private Set<UserGroup> replyGroups=new HashSet<>();
     private Set<User>  replyUsers=new HashSet<>();
     private List<Reply> replies=new ArrayList<>();
@@ -45,6 +46,7 @@ public class Post extends BaseObject implements Serializable {
         this.id = id;
     }
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @NotNull
     public String getTitle() {
         return title;
     }
@@ -52,6 +54,7 @@ public class Post extends BaseObject implements Serializable {
         this.title = title;
     }
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @NotNull
     public String getContent() {
         return content;
     }
@@ -101,7 +104,7 @@ public class Post extends BaseObject implements Serializable {
     public void setIfAccessAllReply(boolean ifAccessAllReply) {
         this.ifAccessAllReply = ifAccessAllReply;
     }
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "postReplyGroups",
             joinColumns = {@JoinColumn(name = "post_id")},
@@ -114,7 +117,7 @@ public class Post extends BaseObject implements Serializable {
     public void setReplyGroups(Set<UserGroup> replyGroups) {
         this.replyGroups = replyGroups;
     }
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "postReplyUsers",
             joinColumns = {@JoinColumn(name = "post_id")},

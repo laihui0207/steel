@@ -11,9 +11,9 @@
         </Menu>
 
         <Menu name="Posts" title="Post" page="/home" roles="ROLE_ADMIN,ROLE_USER">
-            <Item name="ReplyMenu" title="replyList.title" page="/replies"/>
-            <Item name="PostMenu" title="postList.title" page="/posts"/>
             <Item name="PostTypeMenu" title="postTypeList.title" page="/postTypes"/>
+            <Item name="PostMenu" title="postList.title" page="/posts"/>
+            <Item name="ReplyMenu" title="replyList.title" page="/replies"/>
         </Menu>
 
         <Menu name="UserMenu" title="menu.user" description="User Menu" page="/userform" roles="ROLE_ADMIN,ROLE_USER"/>

@@ -28,6 +28,11 @@
                 <arg key="uploadForm.file"/>
             </field>
         </form>
+        <form name="userGroup">
+            <field property="name" depends="required">
+                <arg key="userGroup.name"/>
+            </field>
+        </form>
         <form name="user">
             <field property="username" depends="required">
                 <arg key="user.username"/>

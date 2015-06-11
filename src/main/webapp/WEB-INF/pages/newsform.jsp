@@ -87,7 +87,7 @@
 
 <v:javascript formName="news" cdata="false" dynamicJavascript="true" staticJavascript="false"/>
 <script type="text/javascript" src="<c:url value='/scripts/validator.jsp'/>"></script>
-<script type="text/javascript" src="<c:url value='/scripts/editor/kindeditor-all-min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/scripts/editor/kindeditor.js'/>"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
