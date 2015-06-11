@@ -46,7 +46,7 @@
     <display:column property="createTime" sortable="true" titleKey="news.createTime"/>
     <display:column property="expiredTime" sortable="true" titleKey="news.expiredTime"/>
     <display:column  sortable="false" titleKey="news.Action">
-        <a href="/newss/view?id=${newsList.id}" target="_blank">View</a>
+        <a href="/newss/view/${newsList.id}" target="_blank">View</a>
             </display:column>
     <%--<display:column sortProperty="ifAccessLimited" sortable="true" titleKey="news.ifAccessLimited">
         <input type="checkbox" disabled="disabled" <c:if test="${newsList.ifAccessLimited}">checked="checked"</c:if>/>

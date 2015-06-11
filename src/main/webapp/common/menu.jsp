@@ -14,6 +14,9 @@
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
+    <!--Message-START-->
+    <menu:displayMenu name="MessageMenu"/>
+    <!--Message-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

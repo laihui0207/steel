@@ -393,7 +393,58 @@
     </row>
     </table>
     <!--PostType-END-->
+    <!--Message-START-->
+    <table name="messages">
+        <column>id</column>
+        <column>content</column>
+        <column>createTime</column>
+        <column>creater_id</column>
+        <column>sendTime</column>
+        <column>sender_id</column>
+        <column>status</column>
+        <column>title</column>
+        <column>updateTime</column>
+        <column>updater_id</column>
+    <row>
+        <value description="id">-1</value>
+        <value description="content">CdFpJiBjGkTeJjSePvNhLtGgIkNsFuQeStAzJmXgOwWmQwXfOsMhXxJxGkVnKzAdTpZbBtSvQkOgYdNqBbBoFnHuWzDkXdQxJrSqDdRcWxAsQgDpJeFxJcIeXpZnPoChDePaGzFkXnVfKxHqEvEdRiFxNpFkCsGnXjPmKwTdVdPeTdYdMaYsXhCxYcFuQcHdLeIqYhQfFxWqMvEqMxUbTbFzHfIpJcEdAnHlQdGeVfBrSdCqZxFvNrSxVsRaWdB</value>
+        <value description="createTime">2015-06-11</value>
+        <value description="creater_id">-1</value>
+        <value description="sendTime">2015-06-11</value>
+        <value description="sender_id">-1</value>
+        <value description="status">0</value>
+        <value description="title">IjHeUvCjBeQvEzIgOzHzRdDnSeTwYaAjUxFzJhHyGpMqCpUwBiSrXiSuGwQjWuSrZzLsMvIaTmHpPkEtHxHcAaOjVnKyRtEgPuTsLlKsItUlVpGfWwPhNfRqOqZfVnKkCfSiDuXvOqZaMuHfTiIsGsTlIbGvXkDsHvMlPmDkKpNqDpKzNwUnOnTnNsViFqCrBpHnEgBrPqIdKdQpSwXdCgJwVgKxWmIlQlWcTtTeArLrPyQaTsMjQtXqEjEyVuZ</value>
+        <value description="updateTime">2015-06-11</value>
+        <value description="updater_id">-1</value>
+    </row>
+    <row>
+        <value description="id">-2</value>
+        <value description="content">FwBiXiZvFgLgInEgKwImHeEkGdBrYmWyBvGgZoBaNsJqJnZuJfYwSmCwMkGsVgJjEsHwJbShDpVwJwBaYlHjXmByDpRrFpPrCwOuRlQyOlRiAhUaKnRvHjFuVhZyHhBrKgOsIzRgFtZpRuArMoVpTrGdXkBrPpGxLxBmLhMyCwXxRuUvXcJcYoTnYpTuJiQiMbMkVhJiQgDtLkVpFoExWqMaBdPjVoWhDwOvDqGnWvDsGyMvLcKyUqEdVaCvAxN</value>
+        <value description="createTime">2015-06-11</value>
+        <value description="creater_id">-2</value>
+        <value description="sendTime">2015-06-11</value>
+        <value description="sender_id">-2</value>
+        <value description="status">0</value>
+        <value description="title">PxCkBpAfTwQeSuXtWqMiSmUmPiCxZpXnZyOnCoFvGnVbDpWyQfHwEjYgCgUpXfVnQiAhHmSdFdSmSyAaZrMvSiLvOtTiCsPwGeItUkIvUzHnFvMsZnDbDqYxDzZhFdWjEnSjGhOiXjWjTiLmZrGeFwLjHdBqOhRyQyKfZsHpQnBhWgWeKsGgKmTpBwVoEiZoQuMnGcYuJjTvNvFjEtGuSgFyStZtGwRsRkDiWtSnAvUnPuQlFkYgWlKiPcItJwT</value>
+        <value description="updateTime">2015-06-11</value>
+        <value description="updater_id">-2</value>
+    </row>
+    <row>
+        <value description="id">-3</value>
+        <value description="content">UzXtIxMxAkCkGiUcUeWlKwQmFgXvGiOxWxVrCxHaWaJjQmXiZmPnEoHjXqHmTgMyUoKdLzLkTzSwZzKcPrXhVpGnZtWsGtFaIsUeHqTvMgHgXyWxCvYrBpUvZrQtQjTrWaRdJhWuMbSlAqOsWlZpRrPpGjAuVlQiZhGgMoIjGuTaZyXbTjVzKaFfKdDoLaEyPhDlAnJfGsFfRwIkPfOnXxQkNiGzUcScHnVmNdFvYhCoSnJrFsMeBvFnAzRnTfM</value>
+        <value description="createTime">2015-06-11</value>
+        <value description="creater_id">-3</value>
+        <value description="sendTime">2015-06-11</value>
+        <value description="sender_id">-3</value>
+        <value description="status">0</value>
+        <value description="title">BpKiHoHrAfTbIfHwBmQlGoXuKqCtCkDmGaVxPcQsUuPxRtBuErSeRqSdWlVeYjSqAyNfVuZrFhVuOoWsIiBeIhAjHlDlHwMiMwGtDrXjTdXdJcWeBwMlXjCcPjRvIvUbWaRgTcOrUyIeOvKvByOaYfFlJjUcQdShVcCsSyQeIcLlKaJcEtHeVoBhBoXePjCvFdUmMxRjDqFyJeTySsUgOkAeYdEjInRaZcCkKlVsUgPdLkTwChKrFlCxRjGhPgT</value>
+        <value description="updateTime">2015-06-11</value>
+        <value description="updater_id">-3</value>
+    </row>
+    </table>
+    <!--Message-END-->
 </dataset>
+
 
 
 

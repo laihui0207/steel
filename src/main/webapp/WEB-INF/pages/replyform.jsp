@@ -18,33 +18,16 @@
 
 <div class="col-sm-6">
 <form:errors path="*" cssClass="alert alert-danger alert-dismissable" element="div"/>
-<form:form commandName="reply" method="post" action="replyform" cssClass="well"
+<form:form commandName="reply" method="post" action="/replyform" cssClass="well"
            id="replyForm" onsubmit="return validateReply(this)">
 <form:hidden path="id"/>
+    <form:hidden path="post.id"/>
     <spring:bind path="reply.content">
     <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
     </spring:bind>
         <appfuse:label key="reply.content" styleClass="control-label"/>
         <form:input cssClass="form-control" path="content" id="content"  maxlength="255"/>
         <form:errors path="content" cssClass="help-block"/>
-    </div>
-    <!-- todo: change this to read the identifier field from the other pojo -->
-    <form:select cssClass="form-control" path="post" items="postList" itemLabel="label" itemValue="value"/>
-    <!-- todo: change this to read the identifier field from the other pojo -->
-    <form:select cssClass="form-control" path="replier" items="replierList" itemLabel="label" itemValue="value"/>
-    <spring:bind path="reply.replyTime">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="reply.replyTime" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="replyTime" id="replyTime"  maxlength="255"/>
-        <form:errors path="replyTime" cssClass="help-block"/>
-    </div>
-    <spring:bind path="reply.updateTime">
-    <div class="form-group${(not empty status.errorMessage) ? ' has-error' : ''}">
-    </spring:bind>
-        <appfuse:label key="reply.updateTime" styleClass="control-label"/>
-        <form:input cssClass="form-control" path="updateTime" id="updateTime"  maxlength="255"/>
-        <form:errors path="updateTime" cssClass="help-block"/>
     </div>
 
     <div class="form-group">

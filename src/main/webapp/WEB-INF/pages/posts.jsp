@@ -43,7 +43,11 @@
     <display:column sortProperty="ifAccessAllReply" sortable="true" titleKey="post.ifAccessAllReply">
         <input type="checkbox" disabled="disabled" <c:if test="${postList.ifAccessAllReply}">checked="checked"</c:if>/>
     </display:column>
+    <display:column property="lastReplyUser.username" sortable="true" titleKey="post.lastReplyer"/>
     <display:column property="lastReplyTime" sortable="true" titleKey="post.lastReplyTime"/>
+    <display:column  sortable="false" titleKey="post.Action">
+        <a href="/posts/${postList.id}/replies">Replies</a>
+    </display:column>
 
     <display:setProperty name="paging.banner.item_name"><fmt:message key="postList.post"/></display:setProperty>
     <display:setProperty name="paging.banner.items_name"><fmt:message key="postList.posts"/></display:setProperty>

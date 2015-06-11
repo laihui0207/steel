@@ -21,4 +21,9 @@ public class ReplyManagerImpl extends GenericManagerImpl<Reply, Long> implements
         super(replyDao);
         this.replyDao = replyDao;
     }
+
+    @Override
+    public List<Reply> repliesOfPost(String postID) {
+        return replyDao.repliesOfPost(postID);
+    }
 }

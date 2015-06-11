@@ -103,5 +103,12 @@
         <form name="postType">
         </form>
         <!--PostType-END-->
+        <!--Message-START-->
+        <form name="message">
+            <field property="status" depends="required">
+                <arg key="message.status"/>
+            </field>
+        </form>
+        <!--Message-END-->
     </formset>
 </form-validation>

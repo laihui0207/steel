@@ -29,7 +29,7 @@
 <p><fmt:message key="replyList.message"/></p>
 
 <div id="actions" class="btn-group">
-    <a href='<c:url value="/replyform"/>' class="btn btn-primary">
+    <a href='<c:url value="/replyform/${post.id}"/>' class="btn btn-primary">
         <i class="icon-plus icon-white"></i> <fmt:message key="button.add"/></a>
     <a href='<c:url value="/home"/>' class="btn btn-default"><i class="icon-ok"></i> <fmt:message key="button.done"/></a>
 </div>
@@ -39,6 +39,7 @@
         paramId="id" paramProperty="id" titleKey="reply.id"/>
     <display:column property="id" media="csv excel xml pdf" titleKey="reply.id"/>
     <display:column property="content" sortable="true" titleKey="reply.content"/>
+    <display:column property="post.title" sortable="true" titleKey="reply.content"/>
     <display:column property="replyTime" sortable="true" titleKey="reply.replyTime"/>
     <display:column property="updateTime" sortable="true" titleKey="reply.updateTime"/>
 
