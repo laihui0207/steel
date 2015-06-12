@@ -19,5 +19,7 @@
         <mapping class="com.huivip.steel.model.Post"/>
         <mapping class="com.huivip.steel.model.Reply"/>
         <mapping class="com.huivip.steel.model.Message"/>
+        <mapping class="com.huivip.steel.model.DocType"/>
+        <mapping class="com.huivip.steel.model.Documents"/>
     </session-factory>
 </hibernate-configuration>

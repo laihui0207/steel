@@ -110,5 +110,19 @@
             </field>
         </form>
         <!--Message-END-->
+        <!--DocType-START-->
+        <form name="docType">
+        </form>
+        <!--DocType-END-->
+        <!--Documents-START-->
+        <form name="documents">
+            <field property="docSize" depends="required">
+                <arg key="documents.docSize"/>
+            </field>
+            <field property="viewLimit" depends="required">
+                <arg key="documents.viewLimit"/>
+            </field>
+        </form>
+        <!--Documents-END-->
     </formset>
 </form-validation>

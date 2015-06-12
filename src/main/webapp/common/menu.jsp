@@ -17,6 +17,12 @@
     <!--Message-START-->
     <menu:displayMenu name="MessageMenu"/>
     <!--Message-END-->
+    <!--DocType-START-->
+    <menu:displayMenu name="DocTypeMenu"/>
+    <!--DocType-END-->
+    <!--Documents-START-->
+    <menu:displayMenu name="DocumentsMenu"/>
+    <!--Documents-END-->
 </ul>
 </div>
 </menu:useMenuDisplayer>

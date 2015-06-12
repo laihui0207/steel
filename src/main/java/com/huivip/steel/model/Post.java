@@ -55,6 +55,7 @@ public class Post extends BaseObject implements Serializable {
     }
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     @NotNull
+    @Lob
     public String getContent() {
         return content;
     }

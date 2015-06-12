@@ -30,7 +30,15 @@
         <!--Message-START-->
         <Menu name="MessageMenu" title="messageList.title" page="/messages"/>
         <!--Message-END-->
+        <!--DocType-START-->
+        <Menu name="DocTypeMenu" title="docTypeList.title" page="/docTypes"/>
+        <!--DocType-END-->
+        <!--Documents-START-->
+        <Menu name="DocumentsMenu" title="documentsList.title" page="/documentss"/>
+        <!--Documents-END-->
     </Menus>
+
+
 
 
 

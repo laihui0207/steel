@@ -1,32 +1,39 @@
 package com.huivip.steel.util;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
+/*import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.File;*/
+/*import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.Pattern;*/
 
 /**
  * Created by sunlaihui on 6/9/15.
  */
 public class Thumbnail {
-    public static void thumbnail_create(String url, String name) {
+   /* public static void thumbnail_create(String url, String name) {
         Tosmallerpic(url, new File(url + name), "_middle", name, 188, 165,
                 (float) 0.7);
         Tosmallerpic(url, new File(url + name), "_smaller", name, 45, 45,
                 (float) 0.7);
         Tosmallerpic(url, new File(url + name), "_small", name, 116, 100,
                 (float) 0.7);
+    }*/
+    public static void thumbnail_create(String filePath,String name){
+        if(!filePath.endsWith("/")){
+            filePath+="/";
+        }
+        String sourceFile=filePath+name;
+        String thumbnailFile=filePath+name.substring(0,name.lastIndexOf("."))+"_smaller"+name.substring(name.lastIndexOf("."));
+        ImageUtil.compressImage(sourceFile,thumbnailFile,90,120);
     }
-
     /**
      * * * @param f 图片所在的文件夹路径 * @param filelist 图片路径 *
      *
@@ -41,7 +48,7 @@ public class Thumbnail {
      * @param per
      *            百分比
      */
-    private static void Tosmallerpic(String f, File filelist, String ext,
+    /*private static void Tosmallerpic(String f, File filelist, String ext,
                                      String n, int w, int h, float per) {
         Image src;
         try {
@@ -108,7 +115,7 @@ public class Thumbnail {
             FileOutputStream newimage = new FileOutputStream(img_midname); // 输出到文件流
             JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(newimage);
             JPEGEncodeParam jep = JPEGCodec.getDefaultJPEGEncodeParam(tag);
-			/* 压缩质量 */
+			*//* 压缩质量 *//*
             jep.setQuality(per, true);
             encoder.encode(tag, jep);
             // encoder.encode(tag);
@@ -157,15 +164,15 @@ public class Thumbnail {
         Matcher m=r.matcher(str);
         if(m.find()){
             String fileUrl=m.group(1);
-           /* String filePath=fileUrl.substring(0,fileUrl.lastIndexOf("/")+1);
+           *//* String filePath=fileUrl.substring(0,fileUrl.lastIndexOf("/")+1);
             String fileName=fileUrl.substring(fileUrl.lastIndexOf("/")+1);
             System.out.println(filePath);
-            System.out.println(fileName);*/
+            System.out.println(fileName);*//*
             String imgUrl=fileUrl;
             String thumbnailURL=imgUrl.substring(0,imgUrl.lastIndexOf("/")+1)+imgUrl.substring(imgUrl.lastIndexOf("/")+1,
                     imgUrl.lastIndexOf("."))+"_small"+imgUrl.substring(imgUrl.lastIndexOf("."));
             System.out.println(thumbnailURL);
         }
 
-    }
+    }*/
 }
