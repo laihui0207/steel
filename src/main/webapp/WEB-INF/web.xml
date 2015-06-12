@@ -52,7 +52,6 @@
     </filter>
 
 
-
     <!-- GZipFilter has issues with XFire's service-listing servlet. -->
     <!-- http://issues.appfuse.org/browse/APF-863 -->
     <!-- And showing blank pages. http://issues.appfuse.org/browse/APF-1037 -->
@@ -62,10 +61,10 @@
         <filter-name>gzipFilter</filter-name>
         <filter-class>net.sf.ehcache.constructs.web.filter.GzipFilter</filter-class>
     </filter-->
-    <!--<filter>
+    <filter>
         <filter-name>lazyLoadingFilter</filter-name>
         <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-    </filter>-->
+    </filter>
     <!-- Use "org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter" if you're using JPA -->
     <filter>
         <filter-name>localeFilter</filter-name>
@@ -105,7 +104,22 @@
         <filter-name>wroFilter</filter-name>
         <filter-class>ro.isdc.wro.http.WroFilter</filter-class>
     </filter>
-
+ <!--   <filter>
+        <filter-name>osivFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>sessionFactoryBeanName</param-name>    
+            <param-value>sessionFactory</param-value>
+        </init-param>
+        <init-param>   
+            <param-name>singleSession</param-name>    
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>   
+            <param-name>flushMode</param-name>    
+            <param-value>AUTO</param-value>
+        </init-param>
+    </filter>-->
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
@@ -116,10 +130,10 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <!--<filter-mapping>
+    <filter-mapping>
         <filter-name>lazyLoadingFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
     <filter-mapping>
         <filter-name>localeFilter</filter-name>
         <url-pattern>/*</url-pattern>
@@ -171,14 +185,11 @@
     <listener>
         <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
     </listener>
-    <filter>
+
+  <!--  <filter-mapping>
         <filter-name>osivFilter</filter-name>
-        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>osivFilter</filter-name>
-        <url-pattern>*.jsp</url-pattern>
-    </filter-mapping>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

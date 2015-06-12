@@ -42,7 +42,9 @@
     <display:column property="post.title" sortable="true" titleKey="reply.content"/>
     <display:column property="replyTime" sortable="true" titleKey="reply.replyTime"/>
     <display:column property="updateTime" sortable="true" titleKey="reply.updateTime"/>
-
+    <display:column title="Action">
+       <a href="/replyform/d/${replyList.id}">Delete</a>
+    </display:column>
     <display:setProperty name="paging.banner.item_name"><fmt:message key="replyList.reply"/></display:setProperty>
     <display:setProperty name="paging.banner.items_name"><fmt:message key="replyList.replies"/></display:setProperty>
 

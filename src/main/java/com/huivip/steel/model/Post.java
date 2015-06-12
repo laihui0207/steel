@@ -104,7 +104,7 @@ public class Post extends BaseObject implements Serializable {
     public void setIfAccessAllReply(boolean ifAccessAllReply) {
         this.ifAccessAllReply = ifAccessAllReply;
     }
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @JoinTable(
             name = "postReplyGroups",
             joinColumns = {@JoinColumn(name = "post_id")},
@@ -117,7 +117,7 @@ public class Post extends BaseObject implements Serializable {
     public void setReplyGroups(Set<UserGroup> replyGroups) {
         this.replyGroups = replyGroups;
     }
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @JoinTable(
             name = "postReplyUsers",
             joinColumns = {@JoinColumn(name = "post_id")},
